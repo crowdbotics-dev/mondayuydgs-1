@@ -1,52 +1,72 @@
-import axios from "axios"
+import axios from "axios";
 const mondayuydgsAPI = axios.create({
   baseURL: "https://mondayuydgs-1.botics.co",
-  headers: { Accept: "application/json", "Content-Type": "application/json" }
-})
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json"
+  }
+});
+
 function api_docs_schema_retrieve(payload) {
   return mondayuydgsAPI.get(`/api-docs/schema/`, {
-    params: { lang: payload.lang }
-  })
+    params: {
+      lang: payload.lang
+    }
+  });
 }
+
 function api_v1_login_create(payload) {
-  return mondayuydgsAPI.post(`/api/v1/login/`, payload)
+  return mondayuydgsAPI.post(`/api/v1/login/`, payload);
 }
+
 function api_v1_signup_create(payload) {
-  return mondayuydgsAPI.post(`/api/v1/signup/`, payload)
+  return mondayuydgsAPI.post(`/api/v1/signup/`, payload);
 }
+
 function rest_auth_login_create(payload) {
-  return mondayuydgsAPI.post(`/rest-auth/login/`, payload)
+  return mondayuydgsAPI.post(`/rest-auth/login/`, payload);
 }
+
 function rest_auth_logout_retrieve(payload) {
-  return mondayuydgsAPI.get(`/rest-auth/logout/`)
+  return mondayuydgsAPI.get(`/rest-auth/logout/`);
 }
+
 function rest_auth_logout_create(payload) {
-  return mondayuydgsAPI.post(`/rest-auth/logout/`)
+  return mondayuydgsAPI.post(`/rest-auth/logout/`);
 }
+
 function rest_auth_password_change_create(payload) {
-  return mondayuydgsAPI.post(`/rest-auth/password/change/`, payload)
+  return mondayuydgsAPI.post(`/rest-auth/password/change/`, payload);
 }
+
 function rest_auth_password_reset_create(payload) {
-  return mondayuydgsAPI.post(`/rest-auth/password/reset/`, payload)
+  return mondayuydgsAPI.post(`/rest-auth/password/reset/`, payload);
 }
+
 function rest_auth_password_reset_confirm_create(payload) {
-  return mondayuydgsAPI.post(`/rest-auth/password/reset/confirm/`, payload)
+  return mondayuydgsAPI.post(`/rest-auth/password/reset/confirm/`, payload);
 }
+
 function rest_auth_registration_create(payload) {
-  return mondayuydgsAPI.post(`/rest-auth/registration/`, payload)
+  return mondayuydgsAPI.post(`/rest-auth/registration/`, payload);
 }
+
 function rest_auth_registration_verify_email_create(payload) {
-  return mondayuydgsAPI.post(`/rest-auth/registration/verify-email/`, payload)
+  return mondayuydgsAPI.post(`/rest-auth/registration/verify-email/`, payload);
 }
+
 function rest_auth_user_retrieve(payload) {
-  return mondayuydgsAPI.get(`/rest-auth/user/`)
+  return mondayuydgsAPI.get(`/rest-auth/user/`);
 }
+
 function rest_auth_user_update(payload) {
-  return mondayuydgsAPI.put(`/rest-auth/user/`, payload)
+  return mondayuydgsAPI.put(`/rest-auth/user/`, payload);
 }
+
 function rest_auth_user_partial_update(payload) {
-  return mondayuydgsAPI.patch(`/rest-auth/user/`, payload)
+  return mondayuydgsAPI.patch(`/rest-auth/user/`, payload);
 }
+
 export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
@@ -62,4 +82,4 @@ export const apiService = {
   rest_auth_user_retrieve,
   rest_auth_user_update,
   rest_auth_user_partial_update
-}
+};
